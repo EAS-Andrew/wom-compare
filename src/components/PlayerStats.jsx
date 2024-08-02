@@ -68,7 +68,7 @@ const PlayerStats = ({ player, otherPlayer, playerName, gains, otherGains, compa
               <TableCell style={getHigherStatStyle(gains.skills[stat].experience.gained, otherGains?.skills[stat]?.experience.gained || 0)}>
                 {gains.skills[stat].experience.gained.toLocaleString()}
               </TableCell>
-              <TableCell>{gains.skills[stat].rank.gained}</TableCell>
+              <TableCell>{gains.skills[stat].rank.start - gains.skills[stat].rank.end}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -123,7 +123,7 @@ const PlayerStats = ({ player, otherPlayer, playerName, gains, otherGains, compa
           </Box>
           <Box textAlign="center">
             <Typography variant="body1">Rank Gained</Typography>
-            <Typography variant="h6" style={getHigherStatStyle(gains.skills.overall.rank.gained, otherGains?.skills.overall.rank.gained || 0)}>
+            <Typography variant="h6" style={getHigherStatStyle(gains.skills.overall.rank.start = gains.skills.overall.rank.end, otherGains?.skills.overall.rank.start || 0 - otherGains?.skills.overall.rank.end || 0)}>
               {gains.skills.overall.rank.gained}
             </Typography>
           </Box>
