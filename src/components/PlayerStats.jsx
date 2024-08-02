@@ -123,8 +123,8 @@ const PlayerStats = ({ player, otherPlayer, playerName, gains, otherGains, compa
           </Box>
           <Box textAlign="center">
             <Typography variant="body1">Rank Gained</Typography>
-            <Typography variant="h6" style={getHigherStatStyle(gains.skills.overall.rank.start = gains.skills.overall.rank.end, otherGains?.skills.overall.rank.start || 0 - otherGains?.skills.overall.rank.end || 0)}>
-              {gains.skills.overall.rank.gained}
+            <Typography variant="h6" style={getHigherStatStyle(gains.skills.overall.rank.start - gains.skills.overall.rank.end, otherGains?.skills.overall.rank.start - otherGains?.skills.overall.rank.end)}>
+              {gains.skills.overall.rank.start - gains.skills.overall.rank.end}
             </Typography>
           </Box>
         </>
