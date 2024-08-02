@@ -47,11 +47,6 @@ function App() {
           value={username2}
           onChange={(e) => setUsername2(e.target.value)}
         />
-        <Button variant="contained" color="primary" onClick={handleSearch}>
-          Search
-        </Button>
-      </Box>
-      <Box display="flex" justifyContent="center" mb={2}>
         <Select
           value={comparisonMode}
           onChange={handleComparisonModeChange}
@@ -60,6 +55,9 @@ function App() {
           <MenuItem value="stat">Stat Comparison</MenuItem>
           <MenuItem value="gains">Gained Comparison</MenuItem>
         </Select>
+        <Button variant="contained" color="primary" onClick={handleSearch}>
+          Search
+        </Button>
       </Box>
       <PlayerComparison username1={search1} username2={search2} comparisonMode={comparisonMode} />
     </Container>
